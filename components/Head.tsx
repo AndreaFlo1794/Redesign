@@ -1,5 +1,5 @@
 import { title } from 'process'
-import React from 'react'
+
 
 export function Head() {
   return (

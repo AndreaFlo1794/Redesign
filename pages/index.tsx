@@ -3,6 +3,7 @@ import Head from '../components/Head'
 import Banner from '../components/Banner'
 import requests from '<netflix>/utils/requests'
 import { Movie } from '<netflix>/typings'
+import Row from '<netflix>/components/Row'
 
 interface Props {
   netflixOriginals: Movie[]
@@ -26,20 +27,25 @@ const Home = ({ netflixOriginals,
 }: Props) => {
 
   return (
-    <div className='relative h-screen bg-gradient-to-b from-gray-900/10 to-[#010511] lg:h-[140vh] overflow-x-hidden'>
+    <div className='relative h-screen bg-gradient-to-b from-gray-900/10 to-[#010511] lg:h-[140vh]'>
       <Head />
       <Header />
       <main className='relative pl-4 lg:space-y-24 lg:pl-12'>
         {/* Banner */}
         <Banner netflixOriginals={netflixOriginals} />
-        <section>
+        <section className='md:space-y-24'>
           {/* Row */}
-          {/* Row */}
-          {/* Row */}
-          {/* Row */}
-          {/* Row */}
-          {/* Row */}
-          {/* Row */}
+          <Row title="Trending Now" movies={trendingNow} />
+          <Row title="Top Rated" movies={topRated} />
+          <Row title="Action Thrillers" movies={actionMovies} />
+
+          {/* My list Component*/}
+
+          <Row title="Comedies" movies={comedyMovies} />
+          <Row title="Scary Movies" movies={horrorMovies} />
+          <Row title="Romance Movies" movies={romanceMovies} />
+          <Row title="Documentaries" movies={documentaries} />
+
         </section>
       </main>
       {/* Modal */}
